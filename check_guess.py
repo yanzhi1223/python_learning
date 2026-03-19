@@ -1,9 +1,13 @@
 import random
-random_num = random.randint(1,100)
 def check_guess():
+    random_num = random.randint(1,100)
     n = 0
     while True:
-        guess_num = int(input('请输入猜测的数字(1-100):'))
+        try:
+            guess_num = int(input('请输入猜测的数字(1-100):'))
+        except ValueError:
+            print('输入错误,请输入数字')
+            continue
         n = n + 1
         if guess_num <1 or guess_num > 100 :
             print('输入错误,请输入(1-100)中的数字')
